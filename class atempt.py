@@ -4,7 +4,8 @@ class computer():
         self.plug=plug #t or f
         self.power=power #on or off
         self.connection=False
-        logstate=False
+        self.logstate=False
+    
 
     #getter that returns pc status
     def get_status(self):
