@@ -65,7 +65,7 @@ current_room = kitchen
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE"])
+dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS"])
 supplycloset.set_character(dmitry)
 
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
