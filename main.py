@@ -45,6 +45,12 @@ yellowFlashlight = Flashlight("yellow",1,True)
 #
 supplycloset = Room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
 
+# Cattic
+#
+cattic = Room("Cattic", "An small dark room, everything is shiny black and smells oddly clean.  There is a pedastal with a dimly glowing red BUTTON.")
+# The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
+cattic.pedastal = Container("Pedastal", ["cat ears"], "on")
+
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
@@ -60,6 +66,8 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
+cattic.link_room(supplycloset, "TOP")
+supplycloset.link_room(cattic, "BOTTOM")
 current_room = kitchen
 
 # Set up characters
