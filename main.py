@@ -33,6 +33,13 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
+# Weapon Room
+#
+weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
+weaponroom.desk = Container("Table",["bayonet","casings"])
+weaponroom.create_room_item("knife")
+
+
 # Laboratory
 #
 lab = Room("Laboratory","A bright room with sunlight shining through windows secured by prison bars. There is a messy SHELF on the north wall.")
