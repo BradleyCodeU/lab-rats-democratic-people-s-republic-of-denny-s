@@ -12,11 +12,13 @@ class computer():
         if self.plug==true and self.power==true and self.connection==true:
             print("the computer is ON.")
             time.sleep(10)
-            print("you can activate the relay system.")
+            print("please enter your password.")
         elif self.plug==true and self.power==true:
             print("conect a network")
         elif (self.connection==true):
             print("the display is dark")
-    #setter to log on(hacking skill/luck)
-    def logon(self):
+    #setter to log on change must be in main.py
+    def logon (self,password):
+        self.password=password
+        
         
