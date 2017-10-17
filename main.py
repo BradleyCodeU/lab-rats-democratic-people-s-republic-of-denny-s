@@ -56,7 +56,6 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 # Cattic \\ Collin's Room
 #
 cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everything is shiny black and smells sterile.  There is a pedastal with a dimly glowing red BUTTON.")
-=======
 cattic = Room("Cattic", "A small dark room, everything is shiny black and smells oddly clean.   There is a pedastal with a dimly glowing red BUTTON.")
 # The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
