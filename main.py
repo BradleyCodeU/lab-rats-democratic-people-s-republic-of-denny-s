@@ -34,12 +34,7 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
-<<<<<<< HEAD
-# Weapon Room
-
-=======
 # Weapon Room \\ Gab's room
->>>>>>> e25dd5792aade014944b5381a02ed1995891a9f0
 #
 weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
 weaponroom.desk = Container("Table",["bayonet","casings"])
@@ -60,11 +55,9 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 
 # Cattic \\ Collin's Room
 #
-<<<<<<< HEAD
 cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everything is shiny black and smells sterile.  There is a pedastal with a dimly glowing red BUTTON.")
 =======
 cattic = Room("Cattic", "A small dark room, everything is shiny black and smells oddly clean.   There is a pedastal with a dimly glowing red BUTTON.")
->>>>>>> e25dd5792aade014944b5381a02ed1995891a9f0
 # The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
@@ -84,14 +77,11 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
-<<<<<<< HEAD
 cattic.link_room(supplycloset, "EAST")
 supplycloset.link_room(cattic, "WEST")
-=======
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
 cattic.link_room(supplycloset, "TOP")
 supplycloset.link_room(cattic, "BOTTOM")
->>>>>>> e25dd5792aade014944b5381a02ed1995891a9f0
 current_room = kitchen
 
 # Set up characters
