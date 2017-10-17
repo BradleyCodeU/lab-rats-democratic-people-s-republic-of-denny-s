@@ -74,6 +74,7 @@ smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
+weaponroom.link_room(lab, "SOUTH")
 cattic.link_room(supplycloset, "TOP")
 supplycloset.link_room(cattic, "BOTTOM")
 current_room = kitchen
