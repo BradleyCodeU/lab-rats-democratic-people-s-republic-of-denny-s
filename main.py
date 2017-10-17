@@ -2,6 +2,7 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+from catears import CatEars
 
 heldItems = []
 myHealth = 53
@@ -16,7 +17,7 @@ kitchen = Room("Kitchen","A dark and dirty room with flies buzzing around. There
 
 # The kitchen has a CUPBOARD object that contains/hides 3 interactive items, a sponge, a plate, a can of soup
 # Once this container is open, the interactive items will no longer be hidden in the container
-kitchen.cupboard = Container("cupboard above the sink",["sponge","plate","can of "+u'\u0411\u043E\u0440\u0449'+" soup"])
+kitchen.cupboard = Container("cupboard above the sink",["sponge","plate","can of bOPW soup"])
 # The kitchen has a CABINET object that contains/hides 2 interactive items, a knife and a twinkie
 # Once this container is open, the interactive items will no longer be hidden in the container
 kitchen.cabinet = Container("cabinet under the sink",["knife","twinkie"])
@@ -33,6 +34,13 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
+# Weapon Room \\ Gab's room
+#
+weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
+weaponroom.desk = Container("Table",["bayonet","casings"])
+weaponroom.create_room_item("pocket knife")
+
+
 # Laboratory
 #
 lab = Room("Laboratory","A bright room with sunlight shining through windows secured by prison bars. There is a messy SHELF on the north wall.")
@@ -44,6 +52,14 @@ yellowFlashlight = Flashlight("yellow",1,True)
 # Supply Closet
 #
 supplycloset = Room("Supply Closet","A small dark room with a musty smell. On one side is a filing CABINET and a large plastic BIN. On the other side is a SHELF with supplies and a SHOEBOX.")
+
+# Cattic \\ Collin's Room
+#
+cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everything is shiny black and smells sterile.  There is a pedastal with a dimly glowing red BUTTON.")
+cattic = Room("Cattic", "A small dark room, everything is shiny black and smells oddly clean.   There is a pedastal with a dimly glowing red BUTTON.")
+# The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
+cattic.pedastal = Container("pedastal", ["cat ears"], "on")
+catEars = CatEars(0, False)
 
 # Create a fake room called locked that represents all permenently locked doors
 #
@@ -60,12 +76,18 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
+cattic.link_room(supplycloset, "EAST")
+supplycloset.link_room(cattic, "WEST")
+lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
+weaponroom.link_room(lab, "SOUTH")
+cattic.link_room(supplycloset, "TOP")
+supplycloset.link_room(cattic, "BOTTOM")
 current_room = kitchen
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE"])
+dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS"])
 supplycloset.set_character(dmitry)
 
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
@@ -88,6 +110,8 @@ def playerItems():
         redFlashlight.get_interface(heldItems,current_room)
     if "yellow flashlight" in heldItems:
         yellowFlashlight.get_interface(heldItems,current_room)
+    if "cat ears" in heldItems:
+        catEars.get_interface()
 
 # This fuction checks the player's command and then runs the corresponding method
 def checkUserInput(current_room,command,heldItems):
@@ -102,6 +126,8 @@ def checkUserInput(current_room,command,heldItems):
         redFlashlight.check_input(command,heldItems,current_room)
     elif "yellow flashlight" in heldItems and "YELLOW FLASHLIGHT" in command:
         yellowFlashlight.check_input(command,heldItems,current_room)
+    elif "cat ears" in heldItems and ("CAT EARS" in command or "COLOR WHEEL" in command):
+        catEars.check_input(command)
 
     # ********************************* USE, TAKE, DROP *********************************
     # Use an item to fight an enemy
@@ -141,7 +167,7 @@ def checkUserInput(current_room,command,heldItems):
         # Open smalloffice.desk and concat each of the contents to the end of room_items
         current_room.room_items += smalloffice.package.open()
     elif current_room.name == "Small Office" and command == "READ":
-        print(u'\u0420\u043e\u0441\u0441\u0438\u044f\u262D'+" You can't read it. It's written is some strange Cyrillic script.")
+        print("POCCNR??? You can't read it. It's written is some strange Cyrillic script.")
     elif current_room.name == "Small Office" and command == "DESK" and "brass key" in heldItems:
         # Open smalloffice.desk and concat each of the contents to the end of room_items
         print("You use the brass key to unlock the desk.")
@@ -151,6 +177,9 @@ def checkUserInput(current_room,command,heldItems):
     elif current_room.name == "Laboratory" and command == "SHELF":
         # Open lab.shelf and concat each of the contents to the end of room_items
         current_room.room_items += lab.shelf.open()
+    elif current_room.name == "Cattic" and command == "BUTTON":
+        # Open pedastal and concat each of the contents to the end of room_items
+        current_room.room_items += cattic.pedastal.open()
 
     # ********************************* MOVE *********************************
     else:
