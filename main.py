@@ -2,6 +2,7 @@ from room import Room
 from flashlight import Flashlight
 from character import Enemy
 from container import Container
+from catears import CatEars
 
 heldItems = []
 myHealth = 53
@@ -63,9 +64,11 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 
 # Cattic \\ Collin's Room
 #
+cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everything is shiny black and smells sterile.  There is a pedastal with a dimly glowing red BUTTON.")
 cattic = Room("Cattic", "A small dark room, everything is shiny black and smells oddly clean.   There is a pedastal with a dimly glowing red BUTTON.")
 # The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
-cattic.pedastal = Container("Pedastal", ["cat ears"], "on")
+cattic.pedastal = Container("pedastal", ["cat ears"], "on")
+catEars = CatEars(0, False)
 
 # Create a fake room called locked that represents all permenently locked doors
 #
@@ -82,7 +85,10 @@ smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
+cattic.link_room(supplycloset, "EAST")
+supplycloset.link_room(cattic, "WEST")
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
+weaponroom.link_room(lab, "SOUTH")
 cattic.link_room(supplycloset, "TOP")
 supplycloset.link_room(cattic, "BOTTOM")
 current_room = kitchen
@@ -113,6 +119,8 @@ def playerItems():
         redFlashlight.get_interface(heldItems,current_room)
     if "yellow flashlight" in heldItems:
         yellowFlashlight.get_interface(heldItems,current_room)
+    if "cat ears" in heldItems:
+        catEars.get_interface()
 
 # This fuction checks the player's command and then runs the corresponding method
 def checkUserInput(current_room,command,heldItems):
@@ -127,6 +135,8 @@ def checkUserInput(current_room,command,heldItems):
         redFlashlight.check_input(command,heldItems,current_room)
     elif "yellow flashlight" in heldItems and "YELLOW FLASHLIGHT" in command:
         yellowFlashlight.check_input(command,heldItems,current_room)
+    elif "cat ears" in heldItems and ("CAT EARS" in command or "COLOR WHEEL" in command):
+        catEars.check_input(command)
 
     # ********************************* USE, TAKE, DROP *********************************
     # Use an item to fight an enemy
@@ -176,6 +186,9 @@ def checkUserInput(current_room,command,heldItems):
     elif current_room.name == "Laboratory" and command == "SHELF":
         # Open lab.shelf and concat each of the contents to the end of room_items
         current_room.room_items += lab.shelf.open()
+    elif current_room.name == "Cattic" and command == "BUTTON":
+        # Open pedastal and concat each of the contents to the end of room_items
+        current_room.room_items += cattic.pedastal.open()
 
     # ********************************* MOVE *********************************
     else:
