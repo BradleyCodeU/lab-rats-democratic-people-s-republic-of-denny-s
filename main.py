@@ -34,6 +34,12 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
+#Key Room // Alex's room
+#
+keyroom = Room("Key Room","cobwebs in all the corners, the floor has a layer of dust.  there is a BOX.")
+keyroom.box= Container("box",["golden key"])
+keyroom.create_room_item(["golden key"])
+
 <<<<<<< HEAD
 # Weapon Room
 
