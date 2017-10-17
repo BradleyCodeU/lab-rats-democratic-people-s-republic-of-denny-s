@@ -33,6 +33,15 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
+#medium Office
+#
+medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
+medoff.desk=container("desk",["battery"])
+#medoff.bookshelf=lenin portrit
+medoff.comp=Computer(True,True)
+comp.get_status
+if comp.
+
 # Weapon Room \\ Gab's room
 #
 weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
