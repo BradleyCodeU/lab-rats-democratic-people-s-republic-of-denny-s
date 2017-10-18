@@ -1,4 +1,4 @@
-class catPhones();
+class CatPhones();
     def __init__(self,color,music,musicOff):
         self.color = color
         self.music = music #0 or 1
