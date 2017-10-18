@@ -3,6 +3,7 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
+from computer import Computer
 
 heldItems = []
 myHealth = 53
@@ -37,11 +38,10 @@ redFlashlight = Flashlight("red",0,False)
 #medium Office
 #
 medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
-medoff.desk=container("desk",["battery"])
+#medoff.desk=container("desk",["battery"])
 #medoff.bookshelf=lenin portrit
 medoff.comp=Computer(True,True)
 comp.get_status
-if comp.
 
 # Weapon Room \\ Gab's room
 #
@@ -94,13 +94,11 @@ lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 cattic.link_room(supplycloset, "EAST")
 supplycloset.link_room(cattic, "WEST")
-lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
-<<<<<<< HEAD
-=======
+lab.link_room(weaponroom, "NORTH")
+#---Link to weapon room---
 weaponroom.link_room(lab, "SOUTH")
 cattic.link_room(supplycloset, "TOP")
 supplycloset.link_room(cattic, "BOTTOM")
->>>>>>> 59f485949af4969a611f7f6e7a8287390c4c24f1
 current_room = kitchen
 
 
