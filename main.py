@@ -3,12 +3,9 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-<<<<<<< HEAD
 from pocketknife import PocketKnife
 from catphones import CatPhones
-=======
 from computer import Computer
->>>>>>> b63f4b9af0ea7ca3134cf48138960b502710132c
 
 heldItems = []
 myHealth = 53
@@ -76,20 +73,9 @@ cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everythi
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 # Passage
-=======
-<<<<<<< HEAD
->>>>>>> b63f4b9af0ea7ca3134cf48138960b502710132c
-# Outside \\ Collin's Second Room
 #Library\\Katie's room
-<<<<<<< HEAD
-=======
->>>>>>> 30641fdef6348c8df554cda30b0320fefbec1113
->>>>>>> f05c98c99d193a49d4d463f224c0af74aa0147be
->>>>>>> b63f4b9af0ea7ca3134cf48138960b502710132c
 #
 passage = Room("Passage", "You walk through the door.  There is another door that leads outside.  The window is covered in snow.  The outdoors feel ominous- you should probably prepare yourself before you continue.")
 # Outside \\ Collin's Second Room
@@ -127,33 +113,12 @@ current_room = kitchen
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","SPOON"])
-supplycloset.set_character(dmitry)
-stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable. He also has cat ears and a tail...?")
-stalin.set_speech("Commeownism shaww wise again nya~!")
-stalin.set_weaknesses(["CAT EARS"])
-
-=======
-<<<<<<< HEAD
->>>>>>> b63f4b9af0ea7ca3134cf48138960b502710132c
 dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","POCKET KNIFE"])
 supplycloset.set_character(dmitry)
 stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable as the infamous leader of the Soviet Union. He also has cat ears and a tail...?")
 stalin.set_speech("Commeownism shaww wise again nya~!")
 stalin.set_weaknesses(["CAT EARS"])
 
-<<<<<<< HEAD
-=======
-=======
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS"])
-supplycloset.set_character(dmitry)
->>>>>>> 30641fdef6348c8df554cda30b0320fefbec1113
->>>>>>> f05c98c99d193a49d4d463f224c0af74aa0147be
-
->>>>>>> b63f4b9af0ea7ca3134cf48138960b502710132c
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
 def playerItems():
     # Print out the player's Held Items and let player know if they can USE an item to fight a character or something
