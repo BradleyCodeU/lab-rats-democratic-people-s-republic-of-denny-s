@@ -4,8 +4,8 @@ from character import Enemy
 from container import Container
 from catears import CatEars
 from pocketknife import PocketKnife
-from catphones import CatPhones
-from computer import Computer
+# from catphones import CatPhones
+# from computer import Computer
 
 heldItems = []
 myHealth = 53
@@ -37,15 +37,15 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
-#medium Office
-#
-medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
-#medoff.desk=container("desk",["battery"])
-#medoff.bookshelf=lenin portrit
-medoff.comp=Computer(True,True)
-#comp.get_status
-#if comp.
-comp.get_status
+###medium Office
+###
+##medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
+###medoff.desk=container("desk",["battery"])
+###medoff.bookshelf=lenin portrit
+##medoff.comp=Computer(True,True)
+###comp.get_status
+###if comp.
+##comp.get_status
 
 # Weapon Room \\ Gab's room
 #
@@ -105,8 +105,8 @@ lab.link_room(weaponroom, "NORTH")
 weaponroom.link_room(lab, "SOUTH")
 cattic.link_room(supplycloset, "WEST")
 supplycloset.link_room(cattic, "EAST")
-outside.link_room(library, "WEST")
-library.link_room(outside, "EAST")
+##outside.link_room(library, "WEST")
+##library.link_room(outside, "EAST")
 current_room = kitchen
 
 

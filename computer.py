@@ -30,22 +30,22 @@ class computer():
 
     #setters
     #change plug state
-    def plug(self)
-        if (self.plug==True)
+    def plug(self):
+        if (self.plug==True):
             self.plug=False
-        else
+        else:
             self.plug=True
     #change power state
     def power(self):
-        if (self.power==True)
+        if (self.power==True):
             self.power=False
-        else
+        else:
             self.power=True
     #change connection state
     def connection(self):
-        if (self.connection==True)
+        if (self.connection==True):
             self.connection=False
-        else
+        else:
             self.connecrion=True
     #changes password
     def password(self,newPass):
