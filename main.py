@@ -3,11 +3,7 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-<<<<<<< HEAD
 from computer import Computer
-=======
-from catphones import CatPhones
->>>>>>> ac2e46d3f248eda98e7c9d8324e8258605d000e4
 
 heldItems = []
 myHealth = 53
@@ -39,7 +35,6 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
-<<<<<<< HEAD
 #medium Office
 #
 medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
@@ -48,8 +43,6 @@ medoff=Room("Medium Office","A well lit room with a large DESK in it and a large
 medoff.comp=Computer(True,True)
 comp.get_status
 
-=======
->>>>>>> ac2e46d3f248eda98e7c9d8324e8258605d000e4
 # Weapon Room \\ Gab's room
 #
 weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
@@ -72,18 +65,16 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 # Cattic \\ Collin's Room
 #
 cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everything is shiny black and smells sterile.  There is a pedastal with a dimly glowing red BUTTON.")
-cattic = Room("Cattic", "A small dark room, everything is shiny black and smells oddly clean.   There is a pedastal with a dimly glowing red BUTTON.")
 # The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
-#Library\\Katie's room
+# Passage
 #
-library = Room("Library", "A large musky room with lots of cob webs and it is very cold and dark, theres a desk which looks recently dusted, there is a DRAWER in the desk.")
-#opening the desk has the cat headphones on it
-library.drawer = Container("desk",["cat headphones"],"in")
-CatPhones = ("Purple",0,True)
-
+passage = Room("Passage", "You walk through the door.  There is another door that leads outside.  The window is covered in snow.  The outdoors feel ominous- you should probably prepare yourself before you continue.")
+# Outside \\ Collin's Second Room
+#
+outside = Room("Outside","The door leads you outdoors.  It is cold and snowy.  A tattered Soviet flag flies in the wind to your right.")
 
 # Create a fake room called locked that represents all permenently locked doors
 #
@@ -93,6 +84,7 @@ locked = Room("locked","")
 kitchen.link_room(locked, "EAST")
 kitchen.link_room(smalloffice, "SOUTH")
 kitchen.link_room(locked, "WEST")
+outside.link_room(kitchen, "EAST")
 supplycloset.link_room(smalloffice, "EAST")
 smalloffice.link_room(kitchen, "NORTH")
 smalloffice.link_room(lab, "EAST")
@@ -102,22 +94,23 @@ lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
 cattic.link_room(supplycloset, "EAST")
 supplycloset.link_room(cattic, "WEST")
-<<<<<<< HEAD
 lab.link_room(weaponroom, "NORTH")
 #---Link to weapon room---
-=======
-lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
->>>>>>> ac2e46d3f248eda98e7c9d8324e8258605d000e4
 weaponroom.link_room(lab, "SOUTH")
 cattic.link_room(supplycloset, "TOP")
 supplycloset.link_room(cattic, "BOTTOM")
 current_room = kitchen
 
+
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS"])
+dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","SPOON"])
 supplycloset.set_character(dmitry)
+stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable. He also has cat ears and a tail...?")
+stalin.set_speech("Commeownism shaww wise again nya~!")
+stalin.set_weaknesses(["CAT EARS"])
+
 
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
 def playerItems():
