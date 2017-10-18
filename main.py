@@ -40,8 +40,8 @@ medoff=Room("Medium Office","A well lit room with a large DESK in it and a large
 medoff.desk=container("desk",["battery"])
 #medoff.bookshelf=lenin portrit
 medoff.comp=Computer(True,True)
-comp.get_status
-if comp.
+#comp.get_status
+#if comp.
 
 # Weapon Room \\ Gab's room
 #
@@ -69,9 +69,6 @@ cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everythi
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
-# Passage
-#
-passage = Room("Passage", "You walk through the door.  There is another door that leads outside.  The window is covered in snow.  The outdoors feel ominous- you should probably prepare yourself before you continue.")
 # Outside \\ Collin's Second Room
 #
 outside = Room("Outside","The door leads you outdoors.  It is cold and snowy.  A tattered Soviet flag flies in the wind to your right.")
@@ -95,21 +92,20 @@ lab.link_room(smalloffice, "WEST")
 cattic.link_room(supplycloset, "EAST")
 supplycloset.link_room(cattic, "WEST")
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
-<<<<<<< HEAD
-=======
 weaponroom.link_room(lab, "SOUTH")
-cattic.link_room(supplycloset, "TOP")
-supplycloset.link_room(cattic, "BOTTOM")
->>>>>>> 59f485949af4969a611f7f6e7a8287390c4c24f1
+cattic.link_room(supplycloset, "WEST")
+supplycloset.link_room(cattic, "EAST")
+outside.link_room(library, "WEST")
+library.link_room(outside, "EAST")
 current_room = kitchen
 
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","SPOON"])
+dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","POCKET KNIFE"])
 supplycloset.set_character(dmitry)
-stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable. He also has cat ears and a tail...?")
+stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable as the infamous leader of the Soviet Union. He also has cat ears and a tail...?")
 stalin.set_speech("Commeownism shaww wise again nya~!")
 stalin.set_weaknesses(["CAT EARS"])
 
