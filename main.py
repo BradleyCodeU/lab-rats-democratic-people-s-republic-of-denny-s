@@ -41,7 +41,12 @@ medoff=Room("Medium Office","A well lit room with a large DESK in it and a large
 #medoff.desk=container("desk",["battery"])
 #medoff.bookshelf=lenin portrit
 medoff.comp=Computer(True,True)
+<<<<<<< HEAD
+#comp.get_status
+#if comp.
+=======
 comp.get_status
+>>>>>>> 30641fdef6348c8df554cda30b0320fefbec1113
 
 # Weapon Room \\ Gab's room
 #
@@ -69,7 +74,15 @@ cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everythi
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
+<<<<<<< HEAD
 # Passage
+=======
+<<<<<<< HEAD
+# Outside \\ Collin's Second Room
+=======
+#Library\\Katie's room
+>>>>>>> 30641fdef6348c8df554cda30b0320fefbec1113
+>>>>>>> f05c98c99d193a49d4d463f224c0af74aa0147be
 #
 passage = Room("Passage", "You walk through the door.  There is another door that leads outside.  The window is covered in snow.  The outdoors feel ominous- you should probably prepare yourself before you continue.")
 # Outside \\ Collin's Second Room
@@ -97,20 +110,41 @@ supplycloset.link_room(cattic, "WEST")
 lab.link_room(weaponroom, "NORTH")
 #---Link to weapon room---
 weaponroom.link_room(lab, "SOUTH")
+<<<<<<< HEAD
+cattic.link_room(supplycloset, "WEST")
+supplycloset.link_room(cattic, "EAST")
+outside.link_room(library, "WEST")
+library.link_room(outside, "EAST")
+=======
 cattic.link_room(supplycloset, "TOP")
 supplycloset.link_room(cattic, "BOTTOM")
+>>>>>>> 30641fdef6348c8df554cda30b0320fefbec1113
 current_room = kitchen
 
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
+<<<<<<< HEAD
 dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","SPOON"])
 supplycloset.set_character(dmitry)
 stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable. He also has cat ears and a tail...?")
 stalin.set_speech("Commeownism shaww wise again nya~!")
 stalin.set_weaknesses(["CAT EARS"])
 
+=======
+<<<<<<< HEAD
+dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","POCKET KNIFE"])
+supplycloset.set_character(dmitry)
+stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable as the infamous leader of the Soviet Union. He also has cat ears and a tail...?")
+stalin.set_speech("Commeownism shaww wise again nya~!")
+stalin.set_weaknesses(["CAT EARS"])
+
+=======
+dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS"])
+supplycloset.set_character(dmitry)
+>>>>>>> 30641fdef6348c8df554cda30b0320fefbec1113
+>>>>>>> f05c98c99d193a49d4d463f224c0af74aa0147be
 
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
 def playerItems():
