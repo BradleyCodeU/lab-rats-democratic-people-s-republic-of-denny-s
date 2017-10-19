@@ -78,12 +78,11 @@ cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
 #Library\\Katie's room
+#
 library = Room("Library", "A large musky room with lots of cob webs and it is very cold and dark, theres a desk which looks recently dusted, there is a DRAWER in the desk.")
 #opening the desk has the cat headphones on it
 library.drawer = Container("desk",["cat headphones"],"in")
 CatPhones = ("Purple",0,True)
-
-#
 
 # Outside \\ Collin's Second Room
 #
@@ -103,15 +102,13 @@ smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
-lab.link_room(smalloffice, "WEST") #---Link to cattic---
-cattic.link_room(supplycloset, "EAST")
+lab.link_room(smalloffice, "WEST")
+cattic.link_room(supplycloset, "EAST") #---Link to cattic---
 supplycloset.link_room(cattic, "WEST")
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
 lab.link_room(weaponroom, "NORTH")
 #---Link to weapon room---
 weaponroom.link_room(lab, "SOUTH")
-cattic.link_room(supplycloset, "WEST")
-supplycloset.link_room(cattic, "EAST")
 outside.link_room(library, "WEST")
 library.link_room(outside, "EAST")
 current_room = kitchen
