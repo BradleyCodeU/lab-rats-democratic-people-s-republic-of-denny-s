@@ -78,6 +78,11 @@ cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
 #Library\\Katie's room
+library = Room("Library", "A large musky room with lots of cob webs and it is very cold and dark, theres a desk which looks recently dusted, there is a DRAWER in the desk.")
+#opening the desk has the cat headphones on it
+library.drawer = Container("desk",["cat headphones"],"in")
+CatPhones = ("Purple",0,True)
+
 #
 
 # Outside \\ Collin's Second Room
