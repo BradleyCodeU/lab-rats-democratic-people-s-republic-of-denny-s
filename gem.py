@@ -21,6 +21,7 @@ class GemStone():
              if command == "CLEAN":
                  self.turn_on()
              
+             
             
                         
                         
