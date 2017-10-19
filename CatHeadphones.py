@@ -6,11 +6,12 @@ class catPhones();
         self.musicOff = True
         self.isOn = False
 
+
         def get_interface(self, heldItems,current_room):
             if self.isOn and musicOff:
                 print("The "+self.color+" cat headphones are swithced on and not playing music "+self.color+" You can TURN "self.color.upper()+" CAT HEADPHONE MUSIC ON")
             elif self.isOn and not musicOff:
-                print("The "self.color+" cat headphones are swithced on, and glowing neon "+self.color.upper()+" you hear some Twenty one pilots music so you put the headphones on. You can TURN MUSIC OFF")
+                print("The "self.color+" cat headphones are swithced on, and glowing neon "+self.color.upper()+" you hear some music so you put the headphones on. You can TURN MUSIC OFF")
             else:
                 print("The "+self.color+" cat headphones are swithced off. You can PRESS THE ON BUTTON")
             if self.music == 0 and "charger" in heldItems:
@@ -25,11 +26,15 @@ class catPhones();
                 self.turn_off()
                 
 
+        #Accessors
+        def get_song(self,
+        
+        #Mutators
         def turn_on(self):
             if not self.isOn:
             if self.music == 1 and not self.musicOff:
                 self.isOn = True
-                print("You click the play button and music starts playing. You are listenting to the Blitzkrieg Bop by the Ramones.")
+                print("You click the play button and music starts playing. You are listenting to "+song+" Blitzkrieg Bop by the Ramones.")
             else:
                 print("You click the play button but nothing happens. Maybe you need some music?")
 
