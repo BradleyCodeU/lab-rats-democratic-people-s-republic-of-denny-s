@@ -3,10 +3,10 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-from gem import GemStone
+#from gem import GemStone
 from pocketknife import PocketKnife
-from catphones import CatPhones
-from computer import Computer
+#from catphones import CatPhones
+#from computer import Computer
 
 heldItems = []
 myHealth = 53
@@ -41,10 +41,10 @@ redFlashlight = Flashlight("red",0,False)
 
 #medium Office
 #
-medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
+#medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
 #medoff.desk=container("desk",["battery"])
 #medoff.bookshelf=lenin portrit
-medoff.comp=Computer(True,True)
+#medoff.comp=Computer(True,True)
 # What
 #comp.get_status
 #if comp.
@@ -53,7 +53,7 @@ medoff.comp=Computer(True,True)
 
 # Weapon Room \\ Gab's room
 #
-weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
+weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground. Whoever was here last was obviously in a hurry.")
 weaponroom.desk = Container("Table",["bayonet","casings"])
 weaponroom.create_room_item("pocket knife")
 
@@ -144,6 +144,8 @@ def playerItems():
         yellowFlashlight.get_interface(heldItems,current_room)
     if "cat ears" in heldItems:
         catEars.get_interface()
+    if "pocket knife" in heldItems:
+        PocketKnife.get_interface()
 
 # This fuction checks the player's command and then runs the corresponding method
 def checkUserInput(current_room,command,heldItems):
