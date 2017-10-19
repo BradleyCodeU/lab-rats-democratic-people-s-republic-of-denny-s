@@ -95,6 +95,11 @@ catEars = CatEars(0, False)
 
 # Passage
 #Library\\Katie's room
+library = Room("Library", "A large musky room with lots of cob webs and it is very cold and dark, theres a desk which looks recently dusted, there is a DRAWER in the desk.")
+#opening the desk has the cat headphones on it
+library.drawer = Container("desk",["cat headphones"],"in")
+CatPhones = ("Purple",0,True)
+
 #
 passage = Room("Passage", "You walk through the door.  There is another door that leads outside.  The window is covered in snow.  The outdoors feel ominous- you should probably prepare yourself before you continue.")
 # Outside \\ Collin's Second Room
