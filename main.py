@@ -3,8 +3,6 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-<<<<<<< HEAD
-from gem import GemStone
 =======
 from pocketknife import PocketKnife
 # from catphones import CatPhones
@@ -41,7 +39,7 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
-<<<<<<< HEAD
+
 
 
 <<<<<<< HEAD
