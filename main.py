@@ -8,7 +8,7 @@ from catears import CatEars
 =======
 >>>>>>> 878200cc1a003064df078a78a5600d802ea8167a
 from pocketknife import PocketKnife
-#from catphones import CatPhones
+from catphones import CatPhones
 #from computer import Computer
 heldItems = []
 myHealth = 53
@@ -89,7 +89,7 @@ catEars = CatEars(0, False)
 library = Room("Library", "A large musky room with lots of cob webs and it is very cold and dark, theres a desk which looks recently dusted, there is a DRAWER in the desk.")
 #opening the desk has the cat headphones on it
 library.drawer = Container("desk",["cat headphones"],"in")
-CatPhones = ("Purple",0,True)
+CatPhones = ("Purple",0,0,True)
 
 # Outside \\ Collin's Second Room
 #
