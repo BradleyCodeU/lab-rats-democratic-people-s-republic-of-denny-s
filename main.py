@@ -3,13 +3,10 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-<<<<<<< HEAD
 from gem import GemStone
-=======
 from pocketknife import PocketKnife
-# from catphones import CatPhones
-# from computer import Computer
->>>>>>> 3de62606e78a8286f287a2d8badffae28d3aa5b1
+from catphones import CatPhones
+from computer import Computer
 
 heldItems = []
 myHealth = 53
@@ -41,26 +38,20 @@ smalloffice.package = Container("ozon.ru package",["sheet of bubble wrap","porce
 smalloffice.create_room_item("guinea pig")
 redFlashlight = Flashlight("red",0,False)
 
-<<<<<<< HEAD
 
-
-<<<<<<< HEAD
-# Weapon Room
-=======
-###medium Office
-###
-##medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
-###medoff.desk=container("desk",["battery"])
-###medoff.bookshelf=lenin portrit
-##medoff.comp=Computer(True,True)
-###comp.get_status
-###if comp.
+#medium Office
+#
+medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
+#medoff.desk=container("desk",["battery"])
+#medoff.bookshelf=lenin portrit
+medoff.comp=Computer(True,True)
+# What
+#comp.get_status
+#if comp.
 ##comp.get_status
->>>>>>> 3de62606e78a8286f287a2d8badffae28d3aa5b1
 
-=======
+
 # Weapon Room \\ Gab's room
->>>>>>> e25dd5792aade014944b5381a02ed1995891a9f0
 #
 weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground Whoever was here last was obviously in a hurry.")
 weaponroom.desk = Container("Table",["bayonet","casings"])
@@ -81,27 +72,18 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 
 # Cattic \\ Collin's Room
 #
-<<<<<<< HEAD
 cattic = Room("Cattic", "A staircase has led you to a small dark room.  Everything is shiny black and smells sterile.  There is a pedastal with a dimly glowing red BUTTON.")
-=======
-cattic = Room("Cattic", "A small dark room, everything is shiny black and smells oddly clean.   There is a pedastal with a dimly glowing red BUTTON.")
->>>>>>> e25dd5792aade014944b5381a02ed1995891a9f0
 # The Cattic has a pedastal with a red button on it. Pressing the button opens the pedastal and reveals the cat ears.
 cattic.pedastal = Container("pedastal", ["cat ears"], "on")
 catEars = CatEars(0, False)
 
-<<<<<<< HEAD
-=======
-
-# Passage
 #Library\\Katie's room
 #
-passage = Room("Passage", "You walk through the door.  There is another door that leads outside.  The window is covered in snow.  The outdoors feel ominous- you should probably prepare yourself before you continue.")
+
 # Outside \\ Collin's Second Room
 #
 outside = Room("Outside","The door leads you outdoors.  It is cold and snowy.  A tattered Soviet flag flies in the wind to your right.")
 
->>>>>>> 3de62606e78a8286f287a2d8badffae28d3aa5b1
 # Create a fake room called locked that represents all permenently locked doors
 #
 locked = Room("locked","")
@@ -116,40 +98,27 @@ smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
-lab.link_room(smalloffice, "WEST")
-<<<<<<< HEAD
+lab.link_room(smalloffice, "WEST") #---Link to cattic---
 cattic.link_room(supplycloset, "EAST")
 supplycloset.link_room(cattic, "WEST")
-<<<<<<< HEAD
-=======
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
-cattic.link_room(supplycloset, "TOP")
-supplycloset.link_room(cattic, "BOTTOM")
->>>>>>> e25dd5792aade014944b5381a02ed1995891a9f0
-=======
 lab.link_room(weaponroom, "NORTH")
 #---Link to weapon room---
 weaponroom.link_room(lab, "SOUTH")
 cattic.link_room(supplycloset, "WEST")
 supplycloset.link_room(cattic, "EAST")
-##outside.link_room(library, "WEST")
-##library.link_room(outside, "EAST")
->>>>>>> 3de62606e78a8286f287a2d8badffae28d3aa5b1
+outside.link_room(library, "WEST")
+library.link_room(outside, "EAST")
 current_room = kitchen
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
-<<<<<<< HEAD
-dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS"])
-supplycloset.set_character(dmitry)
-=======
 dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","POCKET KNIFE"])
 supplycloset.set_character(dmitry)
 stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable as the infamous leader of the Soviet Union. He also has cat ears and a tail...?")
 stalin.set_speech("Commeownism shaww wise again nya~!")
 stalin.set_weaknesses(["CAT EARS"])
->>>>>>> 3de62606e78a8286f287a2d8badffae28d3aa5b1
 
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
 def playerItems():
