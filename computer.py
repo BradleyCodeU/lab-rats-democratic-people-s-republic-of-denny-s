@@ -1,4 +1,4 @@
-class computer():
+class Computer():
 
     password="1234"
     
@@ -15,7 +15,6 @@ class computer():
             print("the computer is ON.")
             time.sleep(10)
             print("please enter your password.")
-            on+pluged-up=True
             
         elif self.plug==true and self.power==true:
             print("conect a network")

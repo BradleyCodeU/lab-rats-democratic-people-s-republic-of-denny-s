@@ -40,7 +40,7 @@ redFlashlight = Flashlight("red",0,False)
 
 #medium Office
 #
-#medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
+medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
 #medoff.desk=container("desk",["battery"])
 #medoff.bookshelf=lenin portrit
 #medoff.comp=Computer(True,True)
@@ -81,7 +81,7 @@ catEars = CatEars(0, False)
 library = Room("Library", "A large musky room with lots of cob webs and it is very cold and dark, theres a desk which looks recently dusted, there is a DRAWER in the desk.")
 #opening the desk has the cat headphones on it
 library.drawer = Container("desk",["cat headphones"],"in")
-CatPhones = ("Purple",0,True)
+CatPhones = ("Purple",0,0,True)
 
 # Outside \\ Collin's Second Room
 #
@@ -92,24 +92,32 @@ outside = Room("Outside","The door leads you outdoors.  It is cold and snowy.  A
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
+#kitchen
 kitchen.link_room(locked, "EAST")
 kitchen.link_room(smalloffice, "SOUTH")
 kitchen.link_room(locked, "WEST")
+#supply closet
 supplycloset.link_room(smalloffice, "EAST")
+cattic.link_room(supplycloset, "EAST") #---Link to cattic---
+supplycloset.link_room(cattic, "WEST")
+#small office 
 smalloffice.link_room(kitchen, "NORTH")
 smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
+#lab
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
-cattic.link_room(supplycloset, "EAST") #---Link to cattic---
-supplycloset.link_room(cattic, "WEST")
+
 lab.link_room(weaponroom, "NORTH") #---Link to weapon room---
 lab.link_room(weaponroom, "NORTH")
 #---Link to weapon room---
 weaponroom.link_room(lab, "SOUTH")
+#outside
 outside.link_room(library, "WEST")
+#library
 library.link_room(outside, "EAST")
+#starting room
 current_room = kitchen
 
 # Set up characters
