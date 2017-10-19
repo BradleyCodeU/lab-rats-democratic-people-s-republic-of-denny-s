@@ -38,7 +38,7 @@ class PocketKnife():
 
     #can opener mutator
     #toggles the can opener switch
-    def turnOff(self):
+    def toggleCanOpener(self):
         self.canOpener = not self.canOpener
         
     #accessors

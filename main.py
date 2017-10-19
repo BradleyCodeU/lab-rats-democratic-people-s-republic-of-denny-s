@@ -4,12 +4,20 @@ from character import Enemy
 from container import Container
 from catears import CatEars
 <<<<<<< HEAD
+#from gem import GemStone
+from pocketknife import PocketKnife
+#from catphones import CatPhones
+#from computer import Computer
+
+=======
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 878200cc1a003064df078a78a5600d802ea8167a
 from pocketknife import PocketKnife
 from catphones import CatPhones
 #from computer import Computer
+>>>>>>> cb365ee279bc4cea31da291cfd974054053c273f
 heldItems = []
 myHealth = 53
 visitedRooms = []
