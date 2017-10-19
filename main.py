@@ -3,13 +3,10 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-<<<<<<< HEAD
-from gem import GemStone
-=======
+#from gem import GemStone
 from pocketknife import PocketKnife
 # from catphones import CatPhones
 # from computer import Computer
->>>>>>> 3de62606e78a8286f287a2d8badffae28d3aa5b1
 
 heldItems = []
 myHealth = 53

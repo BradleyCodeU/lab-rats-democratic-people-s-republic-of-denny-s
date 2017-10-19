@@ -1,16 +1,13 @@
 class computer():
 
-    connection=False
-    logstate=False
     password="1234"
-    on+pluged-up=False
     
     
     #constructor and paramiters
     def _init_(self,plug,power,conection,logstate):#constructor
         self.plug=plug #t or f
         self.power=power #on or off
-        
+        self.power=conection #on or off
 
     #getter that returns pc status
     def get_status(self):
