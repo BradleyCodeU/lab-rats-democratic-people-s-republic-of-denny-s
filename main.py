@@ -5,7 +5,7 @@ from container import Container
 from catears import CatEars
 from gem import GemStone
 from pocketknife import *
-#from catphones import CatPhones
+from catphones import CatPhones
 from computer import Computer
 
 heldItems = []
@@ -40,14 +40,11 @@ redFlashlight = Flashlight("red",0,False)
 
 #medium Office
 #
-medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
-#medoff.desk=container("desk",["battery"])
-#medoff.bookshelf=lenin portrit
-#medoff.comp=Computer(True,True)
-# What
-#comp.get_status
-#if comp.
-##comp.get_status
+medoff=Room("Medium Office","A well lit room with a large DESK in it and a large portrat of lenin off to one side. On the desk sits a COMPUTER")
+medoff.desk=Container("desk",["battery"])
+
+medoff.comp=Computer()
+
 
 
 # Weapon Room \\ Gab's room
@@ -127,13 +124,14 @@ library.link_room(outside, "EAST")
 current_room = kitchen
 
 # Set up characters
-dmitry = Enemy("Dmitry", "A smelly zombie")
+dmitry = Enemy("Dmitry", "A smelly zombie", 25)
 dmitry.set_speech("Brrlgrh... rgrhl... brains...")
 dmitry.set_weaknesses(["FORK","SPORK","KNIFE","CAT EARS","POCKET KNIFE"])
 supplycloset.set_character(dmitry)
-stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable as the infamous leader of the Soviet Union. He also has cat ears and a tail...?")
+stalin = Enemy("Meowseph Stalin MK X", "A smelly zombie with cybernetic enhancements.  His moustache and uniform make him instantly recognizable as the infamous leader of the Soviet Union. He also has cat ears and a tail...?", 50)
 stalin.set_speech("Commeownism shaww wise again nya~!")
 stalin.set_weaknesses(["CAT EARS"])
+outside.set_character(stalin)
 
 # This is a procedure that simply prints the items the player is holding and tells them if they can do something with that item
 def playerItems():
@@ -250,3 +248,6 @@ while True:
     command = input("> ")
     # Check the user input
     current_room = checkUserInput(current_room,command,heldItems)
+    if(stalin.enemyHealth <= 0)
+        print("CONGRATULATIONS!! You defeated Meowseph Stalin and escaped the neo-Soviet cybernetic compound.  \n\nA helicopter heard your fighting and carries you to the airport in Moscow.  You are free.\n\n=======\NTHE END\n=====)
+        break
