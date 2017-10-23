@@ -6,7 +6,7 @@ from catears import CatEars
 #from gem import GemStone
 from pocketknife import *
 #from catphones import CatPhones
-#from computer import Computer
+from computer import Computer
 
 heldItems = []
 myHealth = 53
