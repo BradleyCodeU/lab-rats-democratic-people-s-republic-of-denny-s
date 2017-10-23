@@ -38,10 +38,10 @@ class Character():
 class Enemy(Character):
 
     # Constructor for enemy
-    def __init__(self, char_name, char_description):
+    def __init__(self, char_name, char_description, health):
         super().__init__(char_name, char_description)
         self.weaknesses = [] # Array for multiple weaknesses
-        self.enemyHealth = randrange(20,40)
+        self.enemyHealth = health
 
     def isEnemy(self):
         return True
