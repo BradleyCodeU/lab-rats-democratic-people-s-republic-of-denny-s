@@ -5,7 +5,7 @@ from container import Container
 from catears import CatEars
 #from gem import GemStone
 from pocketknife import *
-#from catphones import CatPhones
+from catphones import CatPhones
 from computer import Computer
 
 heldItems = []
