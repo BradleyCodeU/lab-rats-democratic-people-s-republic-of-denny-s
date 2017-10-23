@@ -7,15 +7,11 @@ class CatPhones():
         self.musicOff = musicOff #true false
         self.musicOff = True #Why do you take a parameter and then force it to true?
         self.isOn = False
-        self.song = song #Is this a number?
+        self.song = song #0 through 6
 
 
     def get_interface(self, heldItems,current_room):
-        if self.isOn and self.musicOff:
-            print("The "+self.color+" cat headphones are swithced on and not playing music "+self.color+" You can TURN "+self.color.upper()+" CAT HEADPHONE MUSIC ON")
-            #..."not playing music blue You can TURN BLUE CAT HEADPHONE MUSIC ON"
-            #second self.color is out of place, TURN [color] CAT HEADPHONE MUSIC ON isn't recognized as a command
-        elif self.isOn and not self.musicOff:
+        if self.isOn and not self.musicOff:
             print("The "+self.color+" cat headphones are swithced on, and glowing neon "+self.color.upper()+" you hear some music so you put the headphones on. You can TURN MUSIC OFF")
         else:
             print("The "+self.color+" cat headphones are swithced off. You can PRESS THE ON BUTTON") #PRESS THE ON BUTTON isn't included in check_input
@@ -30,15 +26,17 @@ class CatPhones():
             self.get_song() #This method does not exist- and what are you doing with the song name?
         if command == "TURN MUSIC OFF":
             self.turn_off()
+        if command == "TURN THE MUSIC ON":
+            
             
 
     #Accessors
-    def changeSong(self):
+    def change_song(self):
         self.song += 1
         if self.song == len(CatPhones.songList):
             self.color = 0
 
-    def getSong(self):
+    def get_song(self):
         #return songList(self.song)
         return CatPhones.songList[self.song] #fixed
 
