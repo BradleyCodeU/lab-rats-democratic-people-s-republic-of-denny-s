@@ -3,7 +3,7 @@ from flashlight import Flashlight
 from character import Enemy
 from container import Container
 from catears import CatEars
-#from gem import GemStone
+from gem import GemStone
 from pocketknife import *
 #from catphones import CatPhones
 from computer import Computer
@@ -55,6 +55,12 @@ medoff=Room("Medium Office","A well lit room with a large DESK in it and a large
 weaponroom = Room("Weapon Room","A surprisingly well-lit room with random assortments of bayonets, knives, and bullet casings on the ground. Whoever was here last was obviously in a hurry.")
 weaponroom.desk = Container("Table",["bayonet","casings"])
 weaponroom.create_room_item("pocket knife")
+
+#Gem Room \\ Alex's room
+#
+keyroom = Room("Key Room", "a layer of dust covers the floor, and a lone box resides in the center, where the only light shines."
+keyroom.box = Container("Box", ["gem"])
+
 
 
 # Laboratory
