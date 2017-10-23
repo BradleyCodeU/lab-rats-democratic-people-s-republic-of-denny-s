@@ -5,7 +5,7 @@ from container import Container
 from catears import CatEars
 #from gem import GemStone
 from pocketknife import *
-#from catphones import CatPhones
+from catphones import CatPhones
 from computer import Computer
 
 heldItems = []
@@ -40,14 +40,11 @@ redFlashlight = Flashlight("red",0,False)
 
 #medium Office
 #
-medoff=Room("Medium Office","A well lit room with a large DESK in it and a large BOOKSHELF off to one side. On the desk sits a COMPUTER")
-#medoff.desk=container("desk",["battery"])
-#medoff.bookshelf=lenin portrit
-#medoff.comp=Computer(True,True)
-# What
-#comp.get_status
-#if comp.
-##comp.get_status
+medoff=Room("Medium Office","A well lit room with a large DESK in it and a large portrat of lenin off to one side. On the desk sits a COMPUTER")
+medoff.desk=Container("desk",["battery"])
+
+medoff.comp=Computer()
+
 
 
 # Weapon Room \\ Gab's room
